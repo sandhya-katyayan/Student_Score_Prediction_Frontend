@@ -88,7 +88,7 @@ form.addEventListener('submit', (e) => {
     resultContainer.classList.remove('hidden');
 
     setTimeout(() => {
-      fetch('https://student-cgpa-predictor-backend-1.onrender.com/predict', {
+      fetch('https://student-score-predictor-model-backend-1.onrender.com/predict', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
