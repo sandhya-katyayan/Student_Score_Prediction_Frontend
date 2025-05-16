@@ -1,0 +1,503 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Arial', sans-serif;
+}
+
+body {
+  margin:0;
+  padding:0;
+  overflow:hidden;
+  background-color:black;
+  overflow-x: hidden;
+  overflow-y: auto; /* Change this */
+  }
+  section{
+    z-index: 1;
+    min-height: 100vh;
+    width: 100%;
+    position: relative; /* change from absolute */
+    background: radial-gradient(#333, #000);
+    overflow: hidden;
+  }
+  .leaf{
+    position: fixed; /* so it stays as background */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200vh; /* or use 100%, depending on need */
+    pointer-events: none; /* so it doesn't block clicks */
+    z-index: 0; /* stay behind all content */
+  }
+  .leaf div{
+  position:absolute ;
+  display:block ;
+  }
+  .leaf div:nth-child(1){
+      left:20%; 
+      animation:fall 15s linear infinite ;
+      animation-delay:-2s;
+  
+  }
+  .leaf div:nth-child(2){
+      left:70%; 
+      animation:fall 15s linear infinite ;
+      animation-delay:-4s;
+  }
+  .leaf div:nth-child(3){
+      left:10%; 
+      animation:fall 20s linear infinite ;
+      animation-delay:-7s;
+      
+  }
+  .leaf div:nth-child(4){
+      left:50%; 
+     animation:fall 18s linear infinite ; 
+     animation-delay:-5s;
+  }
+  .leaf div:nth-child(5){
+      left:85%; 
+      animation:fall 14s linear infinite ;
+      animation-delay:-5s;
+  }
+  .leaf div:nth-child(6){
+      left:15%; 
+      animation:fall 16s linear infinite ;
+      animation-delay:-10s;
+  }
+  .leaf div:nth-child(7){
+      left:90%; 
+      animation:fall 15s linear infinite ;
+      animation-delay:-4s;
+  }
+  
+  @keyframes fall{
+      0%{
+          opacity:1;
+          top:-10%;
+          transform:translateX(20px) rotate(0deg);
+      }
+      20%{
+          opacity:0.8;
+          transform:translateX(-20px) rotate(45deg);
+      }
+      40%{
+  
+          transform:translateX(-20px) rotate(90deg);
+      }
+      60%{
+          
+         transform:translateX(-20px) rotate(135deg); 
+      }
+      80%{
+      
+          transform:translateX(-20px) rotate(180deg);
+      }
+      100%{
+          
+          top:110%;
+          transform:translateX(-20px) rotate(225deg);
+      }
+      }
+  .leaf1{
+      transform: rotateX(180deg);
+  }
+  
+  
+/* ========== Fixed Header ========== */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px 20px;
+  z-index: 100;
+}
+
+.college-info {
+  display: flex;
+  align-items: center;
+}
+
+.college-info .logo {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.college-info h2 {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.navbar {
+  position: fixed;
+  top: 6%;
+  width: 100%;
+  padding: 10px 20px;
+  text-align: center;
+  z-index: 99;
+  color: #0a0a08; /* Set your main text color here */
+  font-size: 2rem; /* Adjust font size if needed */
+}
+
+.navbar h1 {
+  font-size: 2rem;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase; /* Optional: To make text uppercase */
+  font-weight: bold; /* Optional: Makes the text bold */
+  color: #0b0b0a;
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.7),   /* White glow */
+    0 0 10px rgba(255, 255, 255, 0.5),  /* White glow */
+    0 0 15px rgba(255, 255, 255, 0.3),  /* White glow */
+    0 0 20px #640404, /* Red glow (main glow color) */
+    0 0 30px #640404; /* More red glow */
+}
+
+.footer {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  padding: 1rem 0.5rem;
+  font-size: 0.9rem;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Ensures that the content wraps on smaller screens */
+  position: relative;
+  bottom: auto;
+  margin-top: 73px;
+
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 600px;
+  width: 100%; /* Makes sure the content takes up full width */
+  justify-content: center; /* Centers the content */
+}
+
+.footer-nav select,
+.footer-nav button {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.footer-nav select {
+  padding: 0.4rem 1.5rem 0.5rem 1rem;
+  font-size: 1rem;
+  color: #74e710;
+  border: 1px solid #ccc; /* Add a border color to avoid it looking transparent */
+  border-radius: 8px;
+  background: linear-gradient(to right, #049299, #c13008); /* Keep your gradient background */
+  
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  background-color: linear-gradient(to right, #049299, #c13008);/* Solid background color for fallback */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='white' class='bi bi-caret-down-fill' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14l-4.796-5.481c-.566-.647-.106-1.659.753-1.659h9.592c.86 0 1.32 1.012.753 1.659L8.753 11.14a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1rem;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer-nav select:hover,
+.footer-nav select:focus {
+  background: linear-gradient(to right, #11998e, #38ef7d);
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+
+.footer-nav button {
+  background: linear-gradient(to right, #04991a, #c13008);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.footer-nav button:hover {
+  background: linear-gradient(to right, #640404, #949904);
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 1rem;
+  }
+
+  .footer-content {
+    flex-direction: column-reverse; /* Stacks the content vertically on smaller screens */
+    align-items: center; /* Centers content vertically */
+  }
+
+  .footer-nav select,
+  .footer-nav button {
+    width: 100%; /* Makes the select and button take full width on small screens */
+    margin-top: 1rem;
+  }
+
+  .footer-nav select {
+    font-size: 0.9rem; /* Reduces font size slightly for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 0.8rem 0.4rem;
+  }
+
+  .footer-content {
+    flex-direction: column-reverse;
+    max-width: 100%; /* Ensures content doesn't get too wide */
+    padding: 0 1rem; /* Adds padding for smaller screens */
+  }
+
+  .footer-nav select,
+  .footer-nav button {
+    padding: 0.4rem 0.8rem; /* Adjusts padding for smaller devices */
+    font-size: 0.8rem; /* Reduces font size further for mobile */
+  }
+}
+
+/* ========== Navbar ========== */
+.navbar {
+  position: fixed;
+  top: 50px; /* Adjust based on your fixed-header height */
+  width: 100%;
+  padding: 10px 20px;
+  text-align: center;
+
+  color: #e4e4df;
+  font-size: 2rem;
+ 
+}
+
+.navbar h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #edede7;
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.7),
+    0 0 10px rgba(255, 255, 255, 0.5),
+    0 0 15px rgba(255, 255, 255, 0.3),
+    0 0 20px #640404,
+    0 0 30px #640404;
+}
+
+.form-container {
+  position: relative;
+  z-index: 30;
+  top: 75px;
+  left: auto;
+  transform: none;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: transparent;
+}
+
+#homeBtn {
+  margin-top: 30px;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #07a724, #949904);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#homeBtn:hover {
+  background: linear-gradient(to right,#049299, #c13008 );
+}
+
+#homeBtn.hidden {
+  display: none;
+}
+
+.about-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  max-width: 1300px;
+  width: 100%;
+  justify-content: center;
+}
+
+.left-box, .right-box {
+  background: #e1e1e12e;
+    box-shadow: 0 8px 32px #1f26875e;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border-radius: 10px;
+    border: 1px solid rgba(225, 225, 225, .18);
+  padding: 20px;
+
+ 
+}
+
+.left-box {
+  flex: 1 1 300px;
+  max-width: 500px;
+  max-height: 75vh;
+  color: white;
+  
+}
+
+.right-box {
+  flex: 1 1 300px;
+  max-width: 600px;
+  max-height: 75vh;
+}
+
+.section {
+  margin-top: 20px;
+}
+
+.person-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+
+/* Flip Card Styles */
+.flip-card {
+  background: rgba(147, 7, 7, 0.2);
+  width: 160px;
+  height: 165px;
+  perspective: 1000px;
+  border-radius: 12px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.flip-card-front {
+  background: linear-gradient(to right,#7acfd3, #ad6855 );
+  color: #400505;
+}
+
+.flip-card-back {
+  background: linear-gradient(to right,#cdd37a, #ad6855 );
+}
+
+.flip-card-front img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.flip-card-back {
+  background-color: #930d0d;
+  color: white;
+  transform: rotateY(180deg);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .about-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+ 
+  .left-box,
+  .right-box {
+    width: 95% !important;
+    max-width: 95% !important;
+    max-height: none;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 1.2rem;
+  }
+
+  .section {
+    width: 100%;
+  }
+  .person-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flip-card {
+    width: 250px;
+    height: 250px;
+  }
+
+  .navbar {
+    position: static;
+    background: transparent;
+    font-size: 1rem;
+    margin-top: 80px; 
+    margin-bottom: -20px;
+  }
+
+  .navbar h1 {
+    font-size: 1.2rem;
+  }
+
+  .flip-card-front img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .flip-card-front, .flip-card-back {
+    font-size: 1.2rem;
+    padding: 8px;
+  }
+
+}
+
+
+  
+
+
+
+

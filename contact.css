@@ -1,0 +1,360 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+  padding: 20px; /* prevents contact form from touching screen edges */
+  padding: 20px; /* ✅ This adds space on all sides */
+}
+
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  transform: rotate(-45deg);
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  left: 0;
+  background: linear-gradient(45deg, #ffffff, transparent);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px #ffffff);
+  transform: translate3d(104em, 0, 0);
+}
+
+.star::before,
+.star::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -0.5em;
+  width: 1em;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, white, transparent);
+  border-radius: inherit;
+  animation: blink 2s linear infinite;
+}
+
+.star::before {
+  transform: rotate(45deg);
+}
+
+.star::after {
+  transform: rotate(-45deg);
+}
+
+@keyframes fall {
+  to {
+    transform: translate3d(-30em, 0, 0);
+  }
+}
+
+@keyframes tail-fade {
+  0%, 50% {
+    opacity: 1;
+  }
+  70%, 80% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* === Contact Form === */
+.contact-form {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  width: 100%;
+  max-width: 400px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 14px;
+  outline: none;
+  resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #ddd;
+  opacity: 1;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.contact-form input:focus::placeholder,
+.contact-form textarea:focus::placeholder {
+  opacity: 1;
+  font-size: 14px;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to right, #07a4a7, #99043d);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 16px;
+}
+
+.contact-form button:hover {
+  background: linear-gradient(to right, #b9d731, #bc104c);
+}
+
+/* Tablet Screens */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 25px;
+  }
+
+  .contact-form h2 {
+    font-size: 1.4rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 13.5px;
+  }
+
+  .contact-form button {
+    font-size: 15px;
+  }
+}
+
+/* Mobile Screens */
+@media (max-width: 480px) {
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-form h2 {
+    font-size: 1.2rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .contact-form button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+header {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px); /* subtle background blur effect */
+}
+
+header h1 {
+  font-size: 1.7em;
+  margin: 0;
+  background: linear-gradient(to right, #35d8da, #af3362);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 100% center;
+  }
+}
+
+
+#homeBtn {
+  margin-top: 30px;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #07a724, #047499);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#homeBtn:hover {
+  background: linear-gradient(to right,#049299, #c13008 );
+}
+
+#homeBtn.hidden {
+  display: none;
+}
+
+
+.footer {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  padding: 1rem 0.5rem;
+  font-size: 0.9rem;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Ensures that the content wraps on smaller screens */
+  position: absolute;
+  bottom: 0;
+  margin-top: 73px;
+
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 600px;
+  width: 100%; /* Makes sure the content takes up full width */
+  justify-content: center; /* Centers the content */
+}
+
+.footer-nav select,
+.footer-nav button {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.footer-nav select {
+  padding: 0.4rem 1.5rem 0.5rem 1rem;
+  font-size: 1rem;
+  color: #74e710;
+  border: 1px solid #ccc; /* Add a border color to avoid it looking transparent */
+  border-radius: 8px;
+  background: linear-gradient(to right, #049299, #c13008); /* Keep your gradient background */
+  
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  background-color: linear-gradient(to right, #049299, #c13008);/* Solid background color for fallback */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='white' class='bi bi-caret-down-fill' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14l-4.796-5.481c-.566-.647-.106-1.659.753-1.659h9.592c.86 0 1.32 1.012.753 1.659L8.753 11.14a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1rem;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer-nav select:hover,
+.footer-nav select:focus {
+  background: linear-gradient(to right, #11998e, #38ef7d);
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+
+.footer-nav button {
+  background: linear-gradient(to right, #04991a, #c13008);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.footer-nav button:hover {
+  background: linear-gradient(to right, #640404, #949904);
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 1rem;
+  }
+
+  .footer-content {
+    flex-direction: column-reverse; /* Stacks the content vertically on smaller screens */
+    align-items: center; /* Centers content vertically */
+  }
+
+  .footer-nav select,
+  .footer-nav button {
+    width: 100%; /* Makes the select and button take full width on small screens */
+    margin-top: 1rem;
+  }
+
+  .footer-nav select {
+    font-size: 0.9rem; /* Reduces font size slightly for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 0.8rem 0.4rem;
+  }
+
+  .footer-content {
+    flex-direction: column-reverse;
+    max-width: 100%; /* Ensures content doesn't get too wide */
+    padding: 0 1rem; /* Adds padding for smaller screens */
+  }
+
+  .footer-nav select,
+  .footer-nav button {
+    padding: 0.4rem 0.8rem; /* Adjusts padding for smaller devices */
+    font-size: 0.8rem; /* Reduces font size further for mobile */
+  }
+}

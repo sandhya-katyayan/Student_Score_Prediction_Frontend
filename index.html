@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cgpa Prediction</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Stars Animation -->
+
+    <!-- Fixed Header -->
+    <header class="fixed-header">
+      <div class="college-info">
+        <img
+          src="image.png"
+          alt="Logo"
+          class="logo"
+          style="border-radius: 50%; border: 2px solid white"
+        />
+        <h2>Supaul College of Engineering</h2>
+      </div>
+    </header>
+
+    <!-- Main Navbar -->
+    <nav class="navbar">
+      <h1><i class="fas fa-graduation-cap"></i> Cgpa Prediction</h1>
+    </nav>
+
+    <!-- Form Section -->
+    <div class="form-wrapper">
+      <div class="form-container">
+        <div class="containerglass" id="formContainer">
+          <form class="input-box" id="inputForm">
+            <div class="step-heading">
+              <div class="step-info">
+                <span id="stepNum">1</span>
+                <span id="totalSteps">of 9</span>
+              </div>
+              <p id="questionLabel">Enter your Semester 1 CGPA:</p>
+            </div>
+            <div id="inputArea">
+              <input
+                type="number"
+                id="inputField"
+                min="0"
+                step="0.1"
+                required
+              />
+            </div>
+            <button type="submit" id="nextBtn">
+              Next <i class="fas fa-arrow-right"></i>
+            </button>
+          </form>
+          <button type="button" id="prevBtn" class="hidden">Previous</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Result Section -->
+    <!-- ✅ Updated Result Section -->
+    <div id="resultContainer" class="hidden">
+      <div id="emojiDisplay"></div>
+      <h2 id="cgpaDisplay">Prediction will appear here</h2>
+
+      <!-- ✅ Suggestion toggle section -->
+      <div style="margin-top: 1rem">
+        <button id="toggleSuggestionBtn">Show Suggestions</button>
+        <div id="suggestionBox" style="display: none; margin-top: 1rem"></div>
+      </div>
+
+      <button id="homeBtn" class="hidden">🔁 Start Again</button>
+    </div>
+
+    <!-- Background Effects -->
+    <!-- <div class="scene">
+    <div class="tree-right"></div>
+    <div class="cycle">
+      <img src="image_transparent.png" alt="Girl on Cycle">
+    </div>
+    <div id="leaf-container"></div>
+  </div>-->
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; Copyright 2025, All Right Reserved By SMS TRIO</p>
+        <div class="footer-nav">
+          <button onclick="window.location.href='about.html'">About</button>
+          <button onclick="window.location.href='contact.html'">Contact</button>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
